@@ -1,0 +1,22 @@
+.footer {
+    background: #242424;
+    border-top: 1px solid #000;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo {
+    padding: 8px 8px 5px 12px;
+}
+
+.logo img {
+    width: 52px;
+}
+
+.copyright {
+    font-size: 12px;
+    flex-grow: 1;
+    color: #878787;
+}
