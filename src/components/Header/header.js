@@ -12,18 +12,14 @@ const Header = (props) => { // get props from header tag within layout component
     <div className={style.bars}>
       <FontAwesome name="bars"
         onClick={props.onShowNav}
-        style={{
-          color: '#eee',
-          padding: '10px',
-          cursor: 'pointer'
-        }} />
+        className={style.hamburger} />
     </div>
   )
 
   const logo = () => (
     <Link to="/" className={style.logo}>
-      <img src="/images/nba_logo.png" alt="NBA logo" />>
-      </Link>
+      <img src="/images/nba_logo.svg" alt="NBA logo" />
+    </Link>
   )
 
   return (
