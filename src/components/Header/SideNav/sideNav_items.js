@@ -51,7 +51,7 @@ const SideNavItems = () => {
   }
 
   return (
-    <div className={style.option}>
+    <div className={style.options}>
       {showItems()}
     </div>
   )

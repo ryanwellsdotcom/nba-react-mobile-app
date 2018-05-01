@@ -1,8 +1,12 @@
+.options {
+    margin-top: 5px;
+}
+
 .option {
     font-weight: 300;
     font-size: 12px;
     color: #bababa;
-    border-top: 1px solid #404040;
+    border-bottom: 1px solid #404040;
     padding: 10px;
 }
 
