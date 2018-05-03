@@ -1,0 +1,25 @@
+.featured_item {
+    position: relative;
+}
+
+.featured_item a {
+    position: absolute;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    text-decoration: none;
+    color: #fff;
+}
+
+.featured_image {
+    height: 330px;
+}
+
+.featured_title {
+    top: 0;
+    width: 100%;
+    font-size: 28px;
+    font-weight: 300;
+    padding: 20px;
+    box-sizing: border-box;
+}
