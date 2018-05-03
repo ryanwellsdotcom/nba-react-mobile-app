@@ -4,29 +4,29 @@ import { Link } from 'react-router-dom';
 import SideNav from './SideNav/sideNav';
 
 import FontAwesome from 'react-fontawesome';
-import style from './header.css';
+import styles from './header.css';
 
 const Header = (props) => { // get props from header tag within layout component
 
   const navBars = () => (
-    <div className={style.bars}>
+    <div className={styles.bars}>
       <FontAwesome name="bars"
         onClick={props.onShowNav}
-        className={style.hamburger} />
+        className={styles.hamburger} />
     </div>
   )
 
   const logo = () => (
-    <Link to="/" className={style.logo}>
+    <Link to="/" className={styles.logo}>
       <img src="/images/nba_logo.svg" alt="NBA logo" />
     </Link>
   )
 
   return (
-    <header className={style.header}>
+    <header className={styles.header}>
       {/* pass in props obj */}
       <SideNav {...props} />
-      <div className={style.headerOptions}>
+      <div className={styles.headerOptions}>
         {navBars()}
         {logo()}
       </div>

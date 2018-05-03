@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CURRENT_YEAR } from '../../config';
-import style from './footer.css';
+import styles from './footer.css';
 
 const Footer = () => (
-  <div className={style.footer}>
-    <Link to="/" className={style.logo}>
+  <div className={styles.footer}>
+    <Link to="/" className={styles.logo}>
       <img src="/images/nba_logo.svg" alt="NBA logo" />
     </Link>
-    <div className={style.copyright}>
+    <div className={styles.copyright}>
       &copy; {CURRENT_YEAR} NBA all rights reserved
     </div>
   </div>

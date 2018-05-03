@@ -1,36 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import FontAwesome from 'react-fontawesome';
-import style from './SideNav.css';
+import styles from './SideNav.css';
 
 const SideNavItems = () => {
   const items = [
     {
-      type: style.option,
+      type: styles.option,
       icon: 'home',
       text: 'Home',
       link: '/'
     },
     {
-      type: style.option,
+      type: styles.option,
       icon: 'file-text-o',
       text: 'News',
       link: '/news'
     },
     {
-      type: style.option,
+      type: styles.option,
       icon: 'play',
       text: 'Videos',
       link: '/videos'
     },
     {
-      type: style.option,
+      type: styles.option,
       icon: 'sign-in',
       text: 'Sign in',
       link: '/sign-in'
     },
     {
-      type: style.option,
+      type: styles.option,
       icon: 'sign-out',
       text: 'Sign out',
       link: '/sign-out'
@@ -51,7 +51,7 @@ const SideNavItems = () => {
   }
 
   return (
-    <div className={style.options}>
+    <div className={styles.options}>
       {showItems()}
     </div>
   )
