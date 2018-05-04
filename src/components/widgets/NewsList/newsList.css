@@ -23,3 +23,15 @@
     width: 100%;
     text-transform: uppercase;
 }
+
+.newslist_wrapper {
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.4s ease-in;
+}
+
+.newslist_wrapper__enterActive {
+    opacity: 1;
+    transform: translateX(0);
+}

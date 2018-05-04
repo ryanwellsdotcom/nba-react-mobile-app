@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { CSSTransitions, TransitionGroup } from 'react-transition-group';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { URL } from '../../../config';
+import Button from '../Buttons/buttons';
 import styles from './newsList.css';
 
 class NewsList extends Component {
@@ -40,13 +41,22 @@ class NewsList extends Component {
       case ('card'):
         template = this.state.items.map((item, i) => {
           return (
-            <div key={i}>
-              <div className={styles.newslist_item}>
-                <Link to={`/articles/${item.id}`}>
-                  <h2>{item.title}</h2>
-                </Link>
+            <CSSTransition
+              key={i}
+              classNames={{
+                enter: styles.newslist_wrapper,
+                enterActive: styles.newslist_wrapper__enterActive
+              }}
+              timeout={400} // css transitions must match
+            >
+              <div>
+                <div className={styles.newslist_item}>
+                  <Link to={`/articles/${item.id}`}>
+                    <h2>{item.title}</h2>
+                  </Link>
+                </div>
               </div>
-            </div>
+            </CSSTransition>
           )
         });
         break;
@@ -59,8 +69,18 @@ class NewsList extends Component {
   render() {
     return (
       <div>
-        {this.renderNews(this.props.type)}
-        <button onClick={() => this.loadMore()} className={styles.newslist_loadmore}>Load More</button>
+        <TransitionGroup
+          component="div"
+          className="list"
+        >
+          {this.renderNews(this.props.type)}
+        </TransitionGroup>
+        <Button
+          type="loadmore"
+          loadMore={() => this.loadMore()}
+          cta="Load More News"
+        />
+        {/* <button onClick={() => this.loadMore()} className={styles.newslist_loadmore}>Load More</button> */}
       </div>
     );
   }
