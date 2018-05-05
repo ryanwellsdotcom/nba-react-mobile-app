@@ -1,5 +1,5 @@
 import React from 'react';
-import NewsSlider from '../widgets/NewsSlider/slider';
+import NewsSlider from '../widgets/NewsSlider/newsSlider';
 import NewsList from '../widgets/NewsList/newsList';
 
 const Home = () => {
