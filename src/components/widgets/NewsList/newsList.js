@@ -22,7 +22,6 @@ class NewsList extends Component {
   request = (start, end) => {
     axios.get(`${URL}/articles?_start=${start}&_end=${end}`)
       .then(response => {
-        console.log('card', response.data)
         this.setState({
           items: [...this.state.items, ...response.data]
         })
