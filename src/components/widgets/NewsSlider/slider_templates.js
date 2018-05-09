@@ -15,10 +15,10 @@ const SliderTemplates = (props) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     ...props.settings
-  }
+  };
 
   switch (props.type) {
-    case ('featured'):
+    case 'featured':
       template = props.data.map((item, i) => {
         return (
           <div key={i}>
@@ -31,8 +31,8 @@ const SliderTemplates = (props) => {
               </Link>
             </div>
           </div>
-        )
-      })
+        );
+      });
       break;
     default:
       template = null;
@@ -42,7 +42,7 @@ const SliderTemplates = (props) => {
     <Slick {...settings}>
       {template}
     </Slick>
-  )
-}
+  );
+};
 
 export default SliderTemplates;
