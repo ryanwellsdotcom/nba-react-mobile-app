@@ -3,7 +3,6 @@ import FontAwesome from 'react-fontawesome';
 import styles from './CardInfo.css';
 
 const CardInfo = (props) => {
-  console.log(props.team)
   const teamName = (teams, team) => {
 
     let data = teams.find((item) => {
