@@ -10,9 +10,6 @@
     display: flex;
     border-bottom: 2px solide #d5d5d5;
     background: #fff;
-}
-
-.videoListItem_template {
     font-size: 13px;
     color: #525252;
 }

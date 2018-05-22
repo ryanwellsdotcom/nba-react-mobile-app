@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import styles from './videoList.css';
 import axios from 'axios';
 import { URL } from '../../../config'
-
 import Button from '../Buttons/buttons';
 import VideoTemplate from './videoListTemplate';
 
@@ -55,7 +54,8 @@ class VideoList extends Component {
   }
 
   loadMore = () => {
-
+    let end = this.state.end + this.state.amount;
+    this.request(this.state.end, end);
   }
 
   componentDidMount() {
@@ -72,9 +72,10 @@ class VideoList extends Component {
         />
         :
         <Button
-          type="linkto"
-          cta="More videos"
-          link="/videos"
+          type="loadmore"
+          cta="Load More Videos"
+          loadMore={() => this.loadMore()}
+        // link="/videos"
         />
     )
   }
