@@ -13,9 +13,9 @@ class NewsArticles extends Component {
 
   componentDidMount() {
     const articleId = this.props.location.pathname.split('/')[2];
-    axios.get(`${URL}/articles?=${articleId}`)
+    axios.get(`${URL}/articles?id=${articleId}`)
       .then(response => {
-        let article = response.data[articleId - 1];
+        let article = response.data[0];
         axios.get(`${URL}/teams?id=${article.team}`)
           .then(response => {
             this.setState({
