@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import queryString from 'query-string';
 import { URL } from '../../../../config';
 import styles from '../../articles.css';
 
@@ -13,10 +12,10 @@ class NewsArticles extends Component {
   }
 
   componentDidMount() {
-    const parsed = queryString.parse(window.location.search);
-    axios.get(`${URL}/articles?=${parsed.id}`)
+    const articleId = this.props.location.pathname.split('/')[2];
+    axios.get(`${URL}/articles?=${articleId}`)
       .then(response => {
-        let article = response.data[parsed.id - 1];
+        let article = response.data[articleId - 1];
         axios.get(`${URL}/teams?id=${article.team}`)
           .then(response => {
             this.setState({
