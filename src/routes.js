@@ -7,10 +7,7 @@ import Home from './components/Home/home';
 import NewsArticle from './components/Articles/News/Post/index';
 
 class Routes extends Component {
-  constructor() {
-    super();
 
-  }
   render() {
     return (
       <div>
