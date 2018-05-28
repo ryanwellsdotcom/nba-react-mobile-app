@@ -27,7 +27,9 @@ class VideoList extends Component {
     axios.get(`${URL}/videos?_start=${start}&_end=${end}`)
       .then(response => {
         this.setState({
-          videos: [...this.state.videos, ...response.data]
+          videos: [...this.state.videos, ...response.data],
+          start,
+          end
         })
       })
   }
