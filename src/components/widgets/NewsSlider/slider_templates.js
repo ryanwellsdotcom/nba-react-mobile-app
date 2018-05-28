@@ -26,7 +26,7 @@ const SliderTemplates = (props) => {
               <div className={styles.featured_image}
                 style={{ background: `url(/images/articles/${item.image}) no-repeat`, backgroundSize: 'cover' }}
               > </div>
-              <Link to={`/articles/${item.id}`}>
+              <Link to={`/articles?id=${item.id}`}>
                 <div className={styles.featured_title}>{item.title}</div>
               </Link>
             </div>
