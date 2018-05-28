@@ -1,9 +1,10 @@
-import React from 'react'
+import React from 'react';
+import propTypes from 'prop-types';
+
 import TeamInfo from '../../Elements/teamInfo';
 import PostData from '../../Elements/postData';
 
 const Header = (props) => {
-
   const teamInfo = (team) => {
     return team ? (
       <TeamInfo team={team} />
@@ -21,5 +22,10 @@ const Header = (props) => {
     </div>
   )
 }
+
+Header.propTypes = {
+  author: propTypes.string,
+  data: propTypes.string,
+};
 
 export default Header;
