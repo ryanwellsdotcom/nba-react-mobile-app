@@ -21,7 +21,7 @@ const Home = () => {
       <VideoList
         type="card"
         title={true}
-        start={3}
+        start={1}
         amount={3}
         loadmore={false}
       />
