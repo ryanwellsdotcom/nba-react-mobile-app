@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import queryString from 'query-string';
 import { URL } from '../../../../config';
 import styles from '../../articles.css';
 
 import Header from './header';
-import Body from './body';
 
 class NewsArticles extends Component {
   state = {
@@ -13,9 +13,10 @@ class NewsArticles extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${URL}/articles?=${this.props.match.params.id}`)
+    const parsed = queryString.parse(window.location.search);
+    axios.get(`${URL}/articles?=${parsed.id}`)
       .then(response => {
-        let article = response.data[0];
+        let article = response.data[parsed.id - 1];
         axios.get(`${URL}/teams?id=${article.team}`)
           .then(response => {
             this.setState({
@@ -37,7 +38,17 @@ class NewsArticles extends Component {
           date={article.date}
           author={article.author}
         />
-        <Body />
+        <div className={styles.articleBody}>
+          <h1>{article.title}</h1>
+          <div className={styles.articleImage}
+            style={{
+              background: `url('/images/articles/${article.image}')`
+            }}
+          ></div>
+          <div className={styles.articleText}>
+            {article.body}
+          </div>
+        </div>
       </div>
     )
   }
