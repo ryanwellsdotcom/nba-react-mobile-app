@@ -63,7 +63,7 @@ class NewsList extends Component {
             >
               <div>
                 <div className={styles.newslist_item}>
-                  <Link to={`/articles?id=${item.id}`}>
+                  <Link to={`/articles/${item.id}`}>
                     <CardInfo teams={this.state.teams} team={item.team} date={item.date} />
                     <h2>{item.title}</h2>
                   </Link>
@@ -88,12 +88,14 @@ class NewsList extends Component {
         >
           {this.renderNews(this.props.type)}
         </TransitionGroup>
-        <Button
-          type="loadmore"
-          loadMore={() => this.loadMore()}
-          cta="Load More News"
-        />
-        {/* <button onClick={() => this.loadMore()} className={styles.newslist_loadmore}>Load More</button> */}
+        <div>
+          <Button
+            type="loadmore"
+            loadMore={() => this.loadMore()}
+            cta="Load More News"
+          />
+          {/* <button onClick={() => this.loadMore()} className={styles.newslist_loadmore}>Load More</button> */}
+        </div>
       </div>
     );
   }
