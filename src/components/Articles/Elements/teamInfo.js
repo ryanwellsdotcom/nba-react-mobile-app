@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 
 import styles from '../articles.css';
 
@@ -22,5 +23,17 @@ const TeamInfo = (props) => {
     </div>
   )
 }
+
+TeamInfo.propTypes = {
+  team: propTypes.shape({
+    city: propTypes.string,
+    count: propTypes.number,
+    description: propTypes.string,
+    id: propTypes.isRequired,
+    logo: propTypes.string,
+    name: propTypes.string,
+    poll: propTypes.string // Would use bool however set to string in db.json
+  })
+};
 
 export default TeamInfo;
