@@ -17,7 +17,7 @@ class Routes extends Component {
         <Layout>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact patch="/articles/:id" component={NewsArticle} />
+            <Route exact patch="/articles?id=:id" component={NewsArticle} />
           </Switch>
         </Layout>
       </div>
